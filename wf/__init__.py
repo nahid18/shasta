@@ -30,7 +30,7 @@ def batch_assembly_task(
     _shasta_cmd = ["./shasta", "--version", ">", version ]
     subprocess.run(_shasta_cmd)
     
-    return LatchFile(str(version), f"latch://{version}"),
+    return LatchFile(str(version), f"latch://{version}")
 
 
 @workflow
