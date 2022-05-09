@@ -17,19 +17,12 @@ def batch_assembly_task(
     Run shasta on the input directory.
     """
 
-    version = Path(f"/root/shasta_version.txt")
-    allowed_extensions = [".fasta", ".fa", ".fastq", ".fq", ".FASTA", ".FA", ".FASTQ", ".FQ"]
+    version = Path(f"/root/shasta_version.txt")    
+    _shasta_cmd = ["./shasta", "--version"]
     
-    # files = [
-    #     os.path.join(input_dir, f) for f in os.listdir(input_dir) 
-    #     if Path(os.path.join(input_dir, f)).is_file() and 
-    #     Path(os.path.join(input_dir, f)).suffix in allowed_extensions
-    # ]
-    # all_files = ' '.join(files)
+    with open(version, "w") as f:
+        subprocess.run(_shasta_cmd, stdout=f, stderr=f)
 
-    _shasta_cmd = ["./shasta", "--version", ">", version ]
-    subprocess.run(_shasta_cmd)
-    
     return LatchFile(str(version), f"latch://{version}")
 
 
@@ -131,6 +124,4 @@ def shasta(
     """
     
     # demo for now
-    return batch_assembly_task(
-        input_dir=input_dir,
-    )
+    return batch_assembly_task(input_dir=input_dir)
