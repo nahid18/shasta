@@ -18,8 +18,8 @@ def batch_assembly_task(
     """
 
     out_file = Path("shasta_version.txt").resolve()
-
-    # allowed_extensions = [".fasta", ".fa", ".FASTA", ".FA", ".fastq", ".fq", ".FASTQ", ".FQ"]
+    allowed_extensions = [".fasta", ".fa", ".fastq", ".fq", ".FASTA", ".FA", ".FASTQ", ".FQ"]
+    
     # files = [
     #     os.path.join(input_dir, f) for f in os.listdir(input_dir) 
     #     if Path(os.path.join(input_dir, f)).is_file() and 
@@ -27,14 +27,9 @@ def batch_assembly_task(
     # ]
     # all_files = ' '.join(files)
 
-    _shasta_cmd = [
-        "./shasta",
-        "--version",
-        ">",
-        out_file,
-    ]
-
+    _shasta_cmd = ["./shasta", "--version", ">", out_file ]
     subprocess.run(_shasta_cmd)
+    
     return LatchFile(str(out_file), "latch:///shasta_version.txt")
 
 
