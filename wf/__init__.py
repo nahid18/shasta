@@ -12,7 +12,7 @@ import os
 @small_task
 def batch_assembly_task(
     input_dir: LatchDir,
-) -> LatchDir:
+) -> LatchFile:
     """
     Run shasta on the input directory.
     """
@@ -36,7 +36,7 @@ def batch_assembly_task(
 @workflow
 def shasta(
     input_dir: LatchDir,
-) -> LatchDir:
+) -> LatchFile:
     
     """Description...
 
