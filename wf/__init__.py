@@ -31,7 +31,7 @@ def batch_assembly_task(
 @workflow
 def shasta(
     input_dir: LatchDir,
-    config: Configuration = Configuration.hifi_oct_21,
+    config: Configuration = Configuration.nano_may_22,
 ) -> LatchFile:
     
     """Description...
