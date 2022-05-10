@@ -1,8 +1,8 @@
 FROM 812206152185.dkr.ecr.us-west-2.amazonaws.com/wf-base:fbe8-main
 
-RUN curl -O -L https://github.com/chanzuckerberg/shasta/releases/download/0.8.0/shasta-Linux-0.8.0 &&\ 
-    chmod ugo+x shasta-Linux-0.8.0 &&\ 
-    mv shasta-Linux-0.8.0 shasta
+RUN curl -O -L https://github.com/chanzuckerberg/shasta/releases/download/0.10.0/shasta-Linux-0.10.0 &&\ 
+    chmod ugo+x shasta-Linux-0.10.0 &&\ 
+    mv shasta-Linux-0.10.0 shasta
 
 COPY wf /root/wf
 
