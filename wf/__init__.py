@@ -15,12 +15,12 @@ def batch_assembly_task(
     input_dir: LatchDir,
     input_file: LatchFile,
     config: Configuration,
-) -> (LatchFile, LatchFile):
+) -> (LatchFile, LatchDir):
     """
     Run shasta on the input directory.
     """
 
-    log_file = Path(f"/root/logfile.txt")
+    log_file = Path(f"/root/log.txt")
     output_dir = Path(f"/root/ShastaRun/")
     assembly_file =  Path(f"{output_dir}/Assembly.fasta")
 
@@ -34,19 +34,12 @@ def batch_assembly_task(
         str(output_dir),
     ]
 
-    # _test_cmd = [
-    #     "head",
-    #     "-n",
-    #     "1",
-    #     str(Path(input_file).resolve()),
-    # ]
-
     with open(log_file, "w") as f:
         subprocess.run(_assembly_cmd, stdout=f, stderr=f)
 
     return (
         LatchFile(str(log_file), f"latch://{log_file}"),
-        LatchFile(str(assembly_file), f"latch://{assembly_file}"),
+        LatchDir(str(output_dir), f"latch://{output_dir}"),
     )
 
 
@@ -55,7 +48,7 @@ def shasta(
     input_dir: LatchDir,
     input_file: LatchFile,
     config: Configuration = Configuration.nano_may_22,
-) -> (LatchFile, LatchFile):
+) -> (LatchFile, LatchDir):
     
     """Description...
 
