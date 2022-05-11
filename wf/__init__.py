@@ -21,8 +21,8 @@ def batch_assembly_task(
     """
 
     log_file = Path(f"/root/logfile.txt")
-    output_dir = Path(f"/root/")
-    assembly_file =  Path(f"{output_dir}Assembly.fasta")
+    output_dir = Path(f"/root/ShastaRun/")
+    assembly_file =  Path(f"{output_dir}/Assembly.fasta")
 
     _assembly_cmd = [
         "./shasta", 
