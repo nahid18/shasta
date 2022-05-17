@@ -14,6 +14,15 @@ Computational methods used by the Shasta assembler include:
 - Using in some phases of the computation a representation of the read sequence based on markers, a fixed subset of short k-mers (k ≈ 10).
 
 
+## Quickstart
+
+1. Download input file (`fasta`) and configuration file (`conf`) from [here](https://mega.nz/folder/R1BmiJJI#YFdxk95m13tZJt-6YLDZMA)
+2. Create an input directory on [dashboard](https://console.latch.bio/data) and upload your data
+3. Add `wf.shasta` to your workspace from [here](https://console.latch.bio/explore/60363/info)
+4. Go to your [workflows](https://console.latch.bio/workflows) and open `wf.shasta` tool
+5. Provide the input directory where `fasta` file is uploaded and also select the `conf` file
+6. Launch the workflow
+
 ## Links
 - Configuration Presets: https://github.com/chanzuckerberg/shasta/tree/master/conf
 - Source Code: https://github.com/chanzuckerberg/shasta
