@@ -16,7 +16,7 @@ Computational methods used by the Shasta assembler include:
 
 ## Quickstart
 
-1. Download input file (`fasta`) and configuration file (`conf`) from [here](https://mega.nz/folder/R1BmiJJI#YFdxk95m13tZJt-6YLDZMA)
+1. Download test input (`fasta`) and configuration (`conf`) files from [here](https://mega.nz/folder/R1BmiJJI#YFdxk95m13tZJt-6YLDZMA)
 2. Create an input directory on [dashboard](https://console.latch.bio/data) and upload your data
 3. Add `wf.shasta` to your workspace from [here](https://console.latch.bio/explore/60363/info)
 4. Go to your [workflows](https://console.latch.bio/workflows) and open `wf.shasta` tool
