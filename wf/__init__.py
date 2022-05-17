@@ -7,26 +7,28 @@ from latch import workflow, large_gpu_task
 from .config import Configuration
 from pathlib import Path
 import subprocess
-import os
 
 
 @large_gpu_task
 def batch_assembly_task(
     input_dir: LatchDir,
-    input_file: LatchFile,
     config: Configuration,
 ) -> (LatchFile, LatchDir):
     """
     Run shasta on the input directory.
     """
 
-    log_file = Path(f"/root/log.txt")
+    log_file = Path(f"/root/shasta_log.txt")
     output_dir = Path(f"/root/ShastaRun/")
+
+    allowed_files = ['.fasta', '.fa', '.fastq', '.fq', '.FASTA', '.FA', '.FASTQ', '.FQ']
+    input_files = [f for f in Path(input_dir).iterdir() if f.suffix in allowed_files]
+    file_paths_as_string = [f.as_posix() for f in input_files]
 
     _assembly_cmd = [
         "./shasta", 
         "--input", 
-        str(Path(input_file).resolve()), 
+        str(" ".join(file_paths_as_string)),
         "--config", 
         str(config.value),
         "--assemblyDirectory",
@@ -45,7 +47,6 @@ def batch_assembly_task(
 @workflow
 def shasta(
     input_dir: LatchDir,
-    input_file: LatchFile,
     config: Configuration = Configuration.nano_may_22,
 ) -> (LatchFile, LatchDir):
     
@@ -135,27 +136,19 @@ def shasta(
     Args:
 
         input_dir:
-          Input FASTA/FASTQ file directory
+          Input directory containing FASTA/FASTQ files to be assembled
 
           __metadata__:
             display_name: Input Directory
 
-        input_file:
-          Input FASTA/FASTQ file
-
-          __metadata__:
-            display_name: Input File
-
         config:
-          Configuration Preset
+          Configuration preset to use for assembly
 
           __metadata__:
             display_name: Configuration
     """
     
-    # demo for now
     return batch_assembly_task(
         input_dir=input_dir,
-        input_file=input_file, 
         config=config,
     )
