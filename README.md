@@ -1,4 +1,4 @@
-# Shasta long read assembler
+# Shasta long read assembler workflow
 
 ### Workflow on LatchBio:
 Access here: https://console.latch.bio/explore/60358/info
