@@ -18,4 +18,4 @@ Computational methods used by the Shasta assembler include:
 
 ## How to cite
 - Paper: https://www.nature.com/articles/s41587-020-0503-6
-- Acknowledgements to external packages:** https://chanzuckerberg.github.io/shasta/Acknowledgments.html
+- Acknowledgements to external packages: https://chanzuckerberg.github.io/shasta/Acknowledgments.html
