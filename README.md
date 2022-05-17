@@ -14,9 +14,9 @@ Computational methods used by the Shasta assembler include:
 
 
 ### Links:
-Source Code: https://github.com/chanzuckerberg/shasta
-Documentation: https://chanzuckerberg.github.io/shasta
+- Source Code: https://github.com/chanzuckerberg/shasta
+- Documentation: https://chanzuckerberg.github.io/shasta
 
 ### How to cite:
-**Paper:** https://www.nature.com/articles/s41587-020-0503-6
-**Acknowledgements to external packages:** https://chanzuckerberg.github.io/shasta/Acknowledgments.html
+- Paper: https://www.nature.com/articles/s41587-020-0503-6
+- Acknowledgements to external packages:** https://chanzuckerberg.github.io/shasta/Acknowledgments.html
