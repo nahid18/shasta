@@ -1,7 +1,7 @@
 # Shasta workflow
 
 ## Workflow on [LatchBio](https://latch.bio)
-Access here: https://console.latch.bio/explore/60363/info
+Access here: https://console.latch.bio/explore/60369/info
 
 ![Interace](./interface.png)
 
